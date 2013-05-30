@@ -1,7 +1,0 @@
-#!/bin/bash
-mv /home/raju/Downloads/*.c  /home/raju/courseware/debugging
-#mv /home/raju/Downloads/*.h  /home/raju/debugging
-
-
-
-exit 0

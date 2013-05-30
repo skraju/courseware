@@ -1,5 +1,0 @@
-#!/bin/bash
-echo -e "enter the C file name to be compiled"
-read fn
-gcc $fn -ggdb3   -o a.out
-exit 0
