@@ -1,0 +1,23 @@
+#Makefile
+#which compiler
+CC=c89
+
+#software developement options
+CFLAGS= -g -Wall
+all: myapp
+myapp:	main.o add.o sub.o mul.o
+	$(CC) main.o add.o sub.o mul.o -o myapp
+main.o:	main.c
+	$(CC) $(CFLAGS) -c main.c
+add.o:	add.c
+	$(CC) $(CFLAGS) -c add.c
+sub.o:	sub.c
+	$(CC) $(CFLAGS) -c sub.c
+mul.o:	mul.c
+	$(CC) $(CFLAGS) -c mul.c
+
+
+
+clean:
+	rm -rf *.o
+	

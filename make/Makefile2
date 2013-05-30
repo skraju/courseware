@@ -1,0 +1,38 @@
+#Makefile
+#which compiler
+CC=gcc
+
+#software developement options
+CFLAGS= -g -Wall
+
+#Installation Directory
+INSTDIR=/home/raju/rama
+
+
+all: myapp
+myapp:	main.o add.o sub.o mul.o
+	$(CC) main.o add.o sub.o mul.o -o myapp
+main.o:	main.c
+	$(CC) $(CFLAGS) -c main.c
+add.o:	add.c
+	$(CC) $(CFLAGS) -c add.c
+sub.o:	sub.c
+	$(CC) $(CFLAGS) -c sub.c
+mul.o:	mul.c
+	$(CC) $(CFLAGS) -c mul.c
+
+
+
+clean:
+	rm -rf *.o
+
+install:
+	if [ -d $(INSTDIR) ]; \
+	then\
+	cp myapp $(INSTDIR); \
+	chmod a+x $(INSTDIR)/myapp;\
+	chmod og-w $(INSTDIR)/myapp;\
+	echo "Installed in $(INSTDIR)";\
+	else\
+	echo "Sorry, $(INSTDIR) does not exist";  \
+	fi	
